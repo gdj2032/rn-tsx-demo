@@ -2,7 +2,7 @@
  * title
  */
 import React, { ReactNode, Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 
 interface IProps {
@@ -24,9 +24,9 @@ export default class index extends Component <IProps, IState> {
 
   render(): ReactNode {
     return (
-      <View>
+      <SafeAreaView>
         <Text>User</Text>
-      </View>
+      </SafeAreaView>
     )
   }
 }
