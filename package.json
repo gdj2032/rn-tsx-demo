@@ -9,7 +9,8 @@
     "mock": "mocker ./mock/mock.js",
     "test": "jest",
     "lint": "eslint .",
-    "build-android": "cd android ./gradlew clean ./gradlew app:assembleRelease"
+    "build-android": "cd android && ./gradlew clean && ./gradlew app:assembleRelease && cd ..",
+    "pod": "cd ios && pod install && cd .."
   },
   "dependencies": {
     "@ant-design/react-native": "^4.0.3",
