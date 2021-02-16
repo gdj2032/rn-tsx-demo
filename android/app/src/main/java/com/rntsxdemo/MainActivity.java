@@ -1,4 +1,4 @@
-package com.rntsxdemo;
+package com.rnTsxDemo;
 
 import com.facebook.react.ReactActivity;
 

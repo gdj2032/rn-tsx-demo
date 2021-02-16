@@ -1,4 +1,4 @@
-package com.rntsxdemo;
+package com.rnTsxDemo;
 
 import android.app.Application;
 import android.content.Context;

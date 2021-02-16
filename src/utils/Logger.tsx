@@ -12,12 +12,17 @@ const logPath = Platform.select({
 });
 
 export default class Logger {
-  static switch = ['off', 'on']
-  static SOTREKEY = 'logAppSwitch'
-  static defaultPath = logPath
-  static title = ''
+  static switch: Array<any> = ['off', 'on'];
+  static SOTREKEY: string = 'logAppSwitch';
+  static defaultPath: any = logPath;
+  static enableFlag: boolean;
+  static title: any = '';
 
-  static log(...args) {
+  constructor(name: string) {
+    this.title = name;
+  }
+
+  static log(...args: any) {
     let [title, message] = args;
     if (message === undefined) { message = title; title = 'no title'; }
     if (this.title) { title = `${this.title} - ${title}`; }
@@ -32,7 +37,7 @@ export default class Logger {
     Logger.logToFile(`[Log] - [${new Date().toJSON()}] -[ ${title} ] >>> ${JSON.stringify(message)}`);
   }
 
-  static async setEnable(flag) {
+  static async setEnable(flag: boolean) {
     await AsyncStorage.setItem(Logger.SOTREKEY, Logger.switch[Number(flag)]);
     // protected
     this.enableFlag = flag;
@@ -51,11 +56,7 @@ export default class Logger {
     }
   }
 
-  constructor(name) {
-    this.title = name;
-  }
-
-  log(...args) {
+  log(...args: any) {
     Logger.log.apply(this, args);
   }
 }
