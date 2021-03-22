@@ -2,8 +2,12 @@ module.exports = {
   root: true,
   extends: '@react-native-community',
   parserOptions: {
-    ecmaFeatures: {
-      legacyDecorators: true
-    }
-  }
+    parser: 'babel-eslint',
+  },
+  parser: 'babel-eslint',
+  plugins: ['import'],
+  globals: {},
+  parserOptions: {
+    sourceType: 'module',
+  },
 };
